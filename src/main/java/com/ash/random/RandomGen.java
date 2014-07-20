@@ -1,5 +1,6 @@
 package com.ash.random;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 /**
@@ -25,11 +26,11 @@ public abstract class RandomGen {
 		if (randomNums == null || probabilities == null || randomNums.length != probabilities.length) {
 			throw new IllegalArgumentException("Both random number and probability arrays must be of equal length!");
 		}
-		double runningTotal = 0;
+		BigDecimal runningTotal = BigDecimal.ZERO;
 		for (int i = 0; i < probabilities.length; i++) {
-			runningTotal += probabilities[i];
+			runningTotal = runningTotal.add(BigDecimal.valueOf(probabilities[i]));
 		}
-		if (runningTotal != 1) {
+		if (runningTotal.doubleValue() != 1d) {
 			throw new IllegalArgumentException("Probabilities must add up to 1!");
 		}
 	}

@@ -8,16 +8,16 @@ import java.util.Map.Entry;
 
 import org.junit.Test;
 
-public class RandomGenImplTest {
+public class RandomGenBetterImplTest {
 
-	private RandomGenBasicImpl testObj;
+	private RandomGenBetterImpl testObj;
 
 	@Test
 	public void testDistribution() {
 		// setup
 		int[] numbers = new int[] { -2, -1, 0, 1, 2 };
 		double[] probabilities = new double[] { 0.01, 0.2, 0.58, 0.2, 0.01 };
-		testObj = new RandomGenBasicImpl(numbers, probabilities);
+		testObj = new RandomGenBetterImpl(numbers, probabilities);
 		Map<Integer, Integer> numberToCount = new LinkedHashMap<Integer, Integer>();
 		for (int i : numbers) {
 			numberToCount.put(i, 0);
@@ -47,30 +47,5 @@ public class RandomGenImplTest {
 		assertTrue(numberToCount.get(1) > numberToCount.get(-2));
 		assertTrue(numberToCount.get(1) > numberToCount.get(2));
 	}
-	
-	@Test
-	public void testWithOnlyOneProbability(){
-		//setup
-		int number =  234;
-		testObj = new RandomGenBasicImpl(new int[]{number}, new double[]{1.0});
-		
-		//assert
-		assertEquals(number, testObj.nextNum());
 
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testWithInvalidNumberOfProbabilities(){
-		testObj = new RandomGenBasicImpl(new int[]{1}, new double[]{0.10, 0.90});
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testWithInvalidNumbers() {
-		testObj = new RandomGenBasicImpl(null, new double[]{});
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testWithInvalidProbabilities() {
-		testObj = new RandomGenBasicImpl(new int[]{}, null);
-	}
 }
