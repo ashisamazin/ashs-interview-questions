@@ -6,6 +6,8 @@ public class RandomGenPerformanceTest {
 
 	private RandomGen impl1;
 	private RandomGen impl2;
+	private RandomGen impl3;
+
 
 	@Test
 	public void testDistribution() {
@@ -18,6 +20,7 @@ public class RandomGenPerformanceTest {
 		}
 		impl1 = new RandomGenBasicImpl(randomNums, probabilities);
 		impl2 = new RandomGenBetterImpl(randomNums, probabilities);
+		impl3 = new RandomGenBetterImpl(randomNums, probabilities);
 
 		long a1 = System.currentTimeMillis();
 		for (int i = 0; i < 10000; i++) {
@@ -31,8 +34,15 @@ public class RandomGenPerformanceTest {
 		}
 		long b2 = System.currentTimeMillis();
 
+		long a3 = System.currentTimeMillis();
+		for (int i = 0; i < 10000; i++) {
+			impl3.nextNum();
+		}
+		long b3 = System.currentTimeMillis();
+		
 		System.out.println("Time taken for basic impl: " + (b1 - a1));
 		System.out.println("Time taken for better impl: " + (b2 - a2));
+		System.out.println("Time taken for fastest impl: " + (b3 - a3));
 
 	}
 
