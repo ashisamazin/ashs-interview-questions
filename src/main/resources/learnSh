@@ -1,0 +1,11 @@
+#!/bin/sh
+
+array[0]="ash"
+array[1]="test"
+
+for var in ${array[*]}
+do
+  echo $var
+  echo $USER
+done
+
