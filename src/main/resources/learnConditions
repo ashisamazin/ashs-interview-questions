@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# if/else statements
+# How to create basic if/else statements
+
+echo "Simple test to check if user input is equal to 'ash' or 'test'"
+
+arg=$1
+
+echo "-------------------"
+if [ $arg == "ash" ]
+then
+	echo "Argument provided was ash!"
+elif [ "$arg" == "test" ]
+then
+	echo "Argument provided was test!"
+else 
+	echo "You did not provide a valid argument, you provided $arg"
+fi
+echo "-------------------"
+
+
