@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Reading from user input
+# How to read from user input and store variables
+
+echo "Please provide some user input: "
+read userInput
+echo "This is the input you provided: $userInput"

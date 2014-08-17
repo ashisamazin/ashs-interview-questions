@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Loops
+# How to handle different types of loop
+
+echo "-------------------"
+arg=1
+while [ $arg -lt 5 ] 
+do
+  echo "Argument is set to $arg"
+  arg=$(($arg + 1))
+  echo "Now increment arg by 1, so arg is set to $arg"
+  break
+done
+
+echo "Instead of going back through the loop, we break immediately, so arg is still set to $arg"
+
+echo "-------------------"
+for var in 1 2 5
+do
+  echo "printing each argument in the loop: $var"
+done
+echo "-------------------"
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Arguments
+# How to deal with program arguments
+
+echo "-------------------"
+firstArgument=""
+echo "Number of arguments provided by the script is : $#"
+firstArgument=$1
+echo "First argument provided is: $firstArgument"
+echo "-------------------"
+

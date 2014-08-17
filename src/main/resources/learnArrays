@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Arrays
+# Showing how to store, access and loop through arrays
+
+array[0]="ash"
+array[1]="test"
+
+echo "The first element in the array is $array[0]"
+
+for var in ${array[*]}
+do
+  echo $var
+done
+
