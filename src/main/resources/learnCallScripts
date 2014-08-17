@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# How to call other scripts from a script
+
+echo "About to call another script"
+sh learnArgs callingFromOtherScript
+echo "Finished calling another script"
