@@ -27,9 +27,23 @@ public class Employee {
 		return employees;
 	}
 
+	public Employee getEmployee1() {
+		if (employees.size() > 0) {
+			return employees.get(0);
+		}
+		return null;
+	}
+
+	public Employee getEmployee2() {
+		if (employees.size() > 1) {
+			return employees.get(1);
+		}
+		return null;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", employees=" + employees + "]";
+		return name + employees;
 	}
 
 }
